@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Junjie-Zhong
+	email = zjj476778843@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = 钟俊杰
+#	email = 476778843@qq.com
+[http]
+	proxy = http://localhost:4780
+[https]
+	proxy = http://localhost:4780
+[socks]
+	proxy = http://localhost:4781
