@@ -141,3 +141,5 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " for the auto-pairs plug not work near the word
 let g:AutoPairsCompleteOnlyOnSpace = 1
 
+" airline-fonts enable
+let g:airline_powerline_fonts = 1
