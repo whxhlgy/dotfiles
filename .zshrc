@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/zhongjunjie/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Moving with prompt
+# Moving with confirm
 alias mv="mv -i" 
 #
 # Example aliases
@@ -118,6 +118,6 @@ alias mv="mv -i"
 
 autoload -U compinit && compinit -u
 # VIM
-export VIM_HOME=/usr/local/Cellar/vim/8.2.3500/
-export PATH=$HOME/bin:$VIM_HOME/bin:$PATH
+export VIM_HOME=$(which vim)
+export PATH=$VIM_HOME:$PATH
 # VIM End
