@@ -120,4 +120,13 @@ autoload -U compinit && compinit -u
 # VIM
 export VIM_HOME=$(which vim)
 export PATH=$VIM_HOME:$PATH
+export EDITOR=vim
+export PATH="/usr/local/bin:$PATH"
 # VIM End
+#
+# MacVim
+alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+# Typora
+alias typora="open -a typora"
+# g++11
+alias g++="g++-11"

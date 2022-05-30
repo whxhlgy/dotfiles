@@ -1,0 +1,44 @@
+# inline math
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+# dm 表示 Display math
+snippet dm "Math" wA
+$$
+${1:${VISUAL}}
+$$ $0
+endsnippet
+
+# snippet // "Fraction" iA
+# \\frac{$1}{$2}$0
+# endsnippet
+
+# 根据用户输入新建一个Markdown格式的表格
+# ？正则表达式，待搞清楚
+snippet '(?<!\\)([0-9])([0-9])tb' "new table" r
+$1`!p 
+x=match.group(1)
+y=match.group(2)
+row1=""
+row2="" 
+for i in range(int(x)):
+    row1+="| "
+    row2+="|:-:"
+row1+="|\n"
+row2+="|\n"
+out=row1+row2+int(y)*row1
+snip.rv=out
+`$0
+endsnippet
+
+# 形成箭头（可带信息）
+snippet -> "right arrow" iA
+\stackrel{$1}{\rightarrow}
+endsnippet
+

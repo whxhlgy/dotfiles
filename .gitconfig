@@ -6,7 +6,7 @@
 #	name = 钟俊杰
 #	email = 476778843@qq.com
 [http]
-	proxy = http://localhost:4780
+	proxy = http://localhost:7890
 [https]
 	proxy = http://localhost:4780
 [socks]

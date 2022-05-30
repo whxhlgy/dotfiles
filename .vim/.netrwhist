@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/zhongjunjie/dotfile/.vim/plugged/sonokai/colors'
+let g:netrw_dirhist_5='/Users/zhongjunjie/.config/coc/extensions'
+let g:netrw_dirhist_4='/Users/zhongjunjie/.config/coc/extensions/node_modules'
+let g:netrw_dirhist_3='/Users/zhongjunjie/.config/coc/extensions/node_modules/coc-ccls'
+let g:netrw_dirhist_2='/Users/zhongjunjie/.config/coc/extensions/node_modules'
+let g:netrw_dirhist_1='/Users/zhongjunjie/dotfile/.vim/plugged/sonokai/autoload'
+let g:netrw_dirhist_0='/Users/zhongjunjie/Desktop/notes/6.s801 note'
+let g:netrw_dirhist_9='/Users/zhongjunjie/Desktop/notes'
+let g:netrw_dirhist_8='/Users/zhongjunjie/Desktop/6.s801'
+let g:netrw_dirhist_7='/Users/zhongjunjie/Desktop/notes'
