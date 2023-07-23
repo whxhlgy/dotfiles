@@ -1,0 +1,18 @@
+{
+	"snip1": {
+		"prefix": "doctest",
+		"body": [
+            "'''",
+            ">>> s = Solution()",
+            ">>> s.$1",
+            "$2",
+            "'''"
+		]
+	},
+    "error print": {
+        "prefix": "errp",
+        "body": [
+            "print($1, file=sys.stderr)"
+        ]
+    }
+}
