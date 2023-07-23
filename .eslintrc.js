@@ -1,8 +1,8 @@
 module.exports = {
-  // "env": {
-  //     "browser": true,
-  //     "es2021": true
-  // },
+  "env": {
+      "browser": true,
+      "es2021": true
+  },
   "extends": "semistandard",
   "rules" : {
     "space-before-function-paren": ["error", {
