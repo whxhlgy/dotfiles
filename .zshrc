@@ -28,7 +28,11 @@ docker-compose
 ) 
 
 source $ZSH/oh-my-zsh.sh
-bindkey '^F' forward-word
+
+##############
+### CUSTOM ###
+##############
+alias l="eza"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -44,6 +48,7 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ##### VIM ######
 ################
 
+alias vim="nvim"
 export VIM_HOME=$(which vim)
 export EDITOR=vim
 
@@ -51,5 +56,11 @@ export EDITOR=vim
 ##### PATH #####
 ################
 export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME.local/bin:$PATH"
 export PATH="/home/junjiezh/bin:$PATH"
 export FPATH="/home/junjiezh/me/eza/completions/zsh:$FPATH"
+
+###############
+## CLI TOOLS ##
+###############
+eval "$(zoxide init zsh)"
