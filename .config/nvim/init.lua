@@ -378,6 +378,32 @@ require('lazy').setup({
             },
           },
         },
+
+        emmet_language_server = {
+          filetypes = { 'css', 'eruby', 'html', 'javascript', 'javascriptreact', 'less', 'sass', 'scss', 'pug', 'typescriptreact' },
+          -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
+          -- **Note:** only the options listed in the table are supported.
+          init_options = {
+            ---@type table<string, string>
+            includeLanguages = {},
+            --- @type string[]
+            excludeLanguages = {},
+            --- @type string[]
+            extensionsPath = {},
+            --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
+            preferences = {},
+            --- @type boolean Defaults to `true`
+            showAbbreviationSuggestions = true,
+            --- @type "always" | "never" Defaults to `"always"`
+            showExpandedAbbreviation = 'always',
+            --- @type boolean Defaults to `false`
+            showSuggestionsAsSnippets = false,
+            --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/syntax-profiles/)
+            syntaxProfiles = {},
+            --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
+            variables = {},
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -409,49 +435,6 @@ require('lazy').setup({
         },
       }
     end,
-  },
-
-  { -- Autoformat
-    'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
-    keys = {
-      {
-        '<leader>f',
-        function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
-        end,
-        mode = '',
-        desc = '[F]ormat buffer',
-      },
-    },
-    opts = {
-      notify_on_error = false,
-      -- format_on_save = function(bufnr)
-      --   -- Disable "format_on_save lsp_fallback" for languages that don't
-      --   -- have a well standardized coding style. You can add additional
-      --   -- languages here or re-enable it for the disabled ones.
-      --   local disable_filetypes = { c = true, cpp = true }
-      --   local lsp_format_opt
-      --   if disable_filetypes[vim.bo[bufnr].filetype] then
-      --     lsp_format_opt = 'never'
-      --   else
-      --     lsp_format_opt = 'fallback'
-      --   end
-      --   return {
-      --     timeout_ms = 500,
-      --     lsp_format = lsp_format_opt,
-      --   }
-      -- end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettier', 'prettierd', stop_after_first = true },
-      },
-    },
   },
 
   { -- Autocompletion
