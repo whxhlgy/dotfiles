@@ -51,6 +51,7 @@ alias l="eza -l --git-ignore"
 
 alias vim="nvim"
 export VIM_HOME=$(which vim)
+export CC=/usr/bin/clang-18
 export EDITOR=nvim
 
 ################
@@ -65,3 +66,4 @@ export FPATH="/home/junjiezh/me/eza/completions/zsh:$FPATH"
 ## CLI TOOLS ##
 ###############
 eval "$(zoxide init zsh)"
+
