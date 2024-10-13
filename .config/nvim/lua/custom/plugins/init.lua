@@ -38,10 +38,26 @@ return {
         },
         ['core.completion'] = {
           config = {
-            engine = "nvim-cmp"
-          }
-        }
+            engine = 'nvim-cmp',
+          },
+        },
       },
     },
+  },
+
+  {
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
+    config = function()
+      require('treesj').setup {--[[ your config ]]
+        ---@type boolean Use default keymaps (<space>m - toggle, <space>j - join, <space>s - split)
+        use_default_keymaps = false,
+      }
+    end,
+    keys = {
+      { '<leader>mm', "<cmd>TSJToggle<cr>", desc = "[Treesj] toggle" },
+      { '<leader>mj', "<cmd>TSJJoin<cr>", desc = "[Treesj] split" },
+      { '<leader>ms', "<cmd>TSJSplit<cr>", desc = "[Treesj] join" }
+    }
   },
 }
