@@ -333,7 +333,12 @@ require('lazy').setup({
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      capabilities = vim.tbl_deep_extend(
+        'force',
+        {},
+        capabilities,
+        require('cmp_nvim_lsp').default_capabilities()
+      )
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -364,6 +369,10 @@ require('lazy').setup({
         },
         --
 
+        html = {
+          filetypes = { "html" },
+        },
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -374,7 +383,19 @@ require('lazy').setup({
                 callSnippet = 'Replace',
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = {
+                -- disable = {
+                --   -- 'missing-fields',
+                -- },
+                globals = {
+                  's',
+                  't',
+                  'i',
+                  'fmt',
+                  'fmta',
+                  'rep',
+                },
+              },
             },
           },
         },
@@ -436,7 +457,6 @@ require('lazy').setup({
       }
     end,
   },
-
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -512,5 +532,16 @@ require('lazy').setup({
   },
 })
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/luasnippets/' } }
+-- require('luasnip').filetype_extend('javascriptreact', {'javascript'})
+require('luasnip').config.set_config { -- Setting LuaSnip config
+
+  -- Enable autotriggered snippets
+  enable_autosnippets = true,
+
+  update_events = 'TextChanged,TextChangedI',
+
+  -- Use <Tab> (or some other key if you prefer) to trigger visual selection
+  -- store_selection_keys = "<Tab>",
+}
+

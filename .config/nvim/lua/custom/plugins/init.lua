@@ -55,9 +55,10 @@ return {
       }
     end,
     keys = {
-      { '<leader>mm', "<cmd>TSJToggle<cr>", desc = "[Treesj] toggle" },
-      { '<leader>mj', "<cmd>TSJJoin<cr>", desc = "[Treesj] split" },
-      { '<leader>ms', "<cmd>TSJSplit<cr>", desc = "[Treesj] join" }
-    }
+      { '<leader>mm', '<cmd>TSJToggle<cr>', desc = '[Treesj] toggle' },
+      { '<leader>mj', '<cmd>TSJJoin<cr>', desc = '[Treesj] split' },
+      { '<leader>ms', '<cmd>TSJSplit<cr>', desc = '[Treesj] join' },
+    },
   },
+  "sindrets/diffview.nvim"
 }

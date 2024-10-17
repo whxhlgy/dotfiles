@@ -43,7 +43,8 @@ export NVM_DIR="$HOME/.nvm"
 
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls='eza'
-alias l="eza -l --git-ignore"
+alias l="eza -l"
+alias notes='vim -c "Neorg workspace notes"'
 
 ################
 ##### VIM ######
@@ -66,4 +67,5 @@ export FPATH="/home/junjiezh/me/eza/completions/zsh:$FPATH"
 ## CLI TOOLS ##
 ###############
 eval "$(zoxide init zsh)"
+
 
