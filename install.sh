@@ -28,10 +28,6 @@ echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable
 sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
 sudo apt update
 sudo apt install -y eza
-# zellij
-cargo install --locked zellij
-mkdir -p $CMP_DIR
-zellij setup --generate-completion zsh > $CMP_DIR/_zellij
 
 # config
 git clone --separate-git-dir=$HOME/.cfg https://github.com/amazjj/dotfiles.git $HOME/myconf-tmp
