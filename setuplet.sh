@@ -1,12 +1,11 @@
 #!/bin/sh
 
 dependencies=(
-    "curl"
-    "git"
     "tmux"
     "luarocks"
     "fzf"
     "ripgrep"
+    "node"
 )
 
 command_exists() {
@@ -53,10 +52,24 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # neovim
-curl https://sh.rustup.rs -sSf | sh # rust and cargo
-cargo install bob-nvim
-bob install nightly
-ln -s ~/.local/share/bob/nightly/bin/nvim ~/.local/bin/nvim
+if ! command_exists nvim; then
+    echo "neovim not installed, installing..."
+    curl https://sh.rustup.rs -sSf | sh # rust and cargo
+    cargo install bob-nvim
+    bob install nightly
+    ln -s ~/.local/share/bob/nightly/bin/nvim ~/.local/bin/nvim
+fi
 
 # p10k(use oh-my-zsh)
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# install other cli tools
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    install_with_apt
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    install_with_brew
+fi
+
+# tmux theme
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux

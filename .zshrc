@@ -1,3 +1,6 @@
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
+#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -50,7 +53,7 @@ alias notes='vim -c "Neorg workspace notes"'
 
 alias vim="nvim"
 export VIM_HOME=$(which vim)
-export CC=/usr/bin/clang-18
+export CC=/usr/bin/clang
 export EDITOR=nvim
 
 ################
@@ -64,6 +67,3 @@ export FPATH="/home/junjiezh/me/eza/completions/zsh:$FPATH"
 ###############
 ## CLI TOOLS ##
 ###############
-eval "$(zoxide init zsh)"
-
-
