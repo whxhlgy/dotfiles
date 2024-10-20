@@ -42,8 +42,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias ls='eza'
-alias l="eza -l"
 alias notes='vim -c "Neorg workspace notes"'
 
 ################
@@ -59,7 +57,7 @@ export EDITOR=nvim
 ##### PATH #####
 ################
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/junjiezh/bin:$PATH"
 export FPATH="/home/junjiezh/me/eza/completions/zsh:$FPATH"
 
