@@ -1,5 +1,8 @@
-export http_proxy="http://127.0.0.1:7890"
-export https_proxy="http://127.0.0.1:7890"
+if [[ $OSTYPE == "darwin"* ]]; then
+    export http_proxy="http://127.0.0.1:7890"
+    export https_proxy="http://127.0.0.1:7890"
+fi
+
 ################
 ##### VIM ######
 ################
@@ -15,11 +18,10 @@ export EDITOR=nvim
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/junjiezh/bin:$PATH"
-export FPATH="/home/junjiezh/me/eza/completions/zsh:$FPATH"
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -38,3 +40,4 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 autoload -U compinit; compinit
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias ls='ls --color=auto'

@@ -1,38 +1,7 @@
 #!/bin/sh
 
-dependencies=(
-    "fish"
-    "tmux"
-    "luarocks"
-    "fzf"
-    "ripgrep"
-    "node"
-    "zsh-syntax-highlighting"
-    "zsh-autosuggestions"
-    "powerlevel10k"
-)
-
 command_exists() {
     command -v "$1" >/dev/null 2>&1
-}
-
-install_with_apt() {
-    echo "Updating package list..."
-    sudo apt update
-    for package in "${dependencies[@]}"; do
-        echo "Installing $package..."
-        sudo apt install -y "$package"
-    done
-}
-
-install_with_brew() {
-    if ! command_exists brew; then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
-    for package in "${dependencies[@]}"; do
-        echo "Installing $package..."
-        brew install "$package"
-    done
 }
 
 ############################
@@ -44,6 +13,10 @@ if ! command_exists zsh; then
     echo "Zsh is not installed. Installing..."
     sudo apt install zsh -y
 fi
+# zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
 
 # tpm(tmux package manager)
 # <C-a> + I to install
@@ -61,5 +34,8 @@ fi
 mkdir -p ~/.config/tmux/plugins/catppuccin
 git clone https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
 
-# set default shell
-echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+if [[ $OSTYPE == "darwin"* ]]; then
+    source ~/setup_mac.sh
+elif [[ $OSTYPE == "linux-gnu"* ]]; then
+    source ~/setup_ubuntu.sh
+fi
