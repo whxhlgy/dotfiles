@@ -14,7 +14,7 @@ config.keys = {
 
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 12
+config.font_size = 14
 
 config.enable_tab_bar = false
 config.window_decorations = "TITLE | RESIZE"

@@ -18,6 +18,7 @@ export EDITOR=nvim
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/junjiezh/bin:$PATH"
+export PATH="$HOME/opt/lua@5.1/bin/lua:$PATH"
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
