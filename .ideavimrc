@@ -1,0 +1,13 @@
+set relativenumber
+set visualbell
+set noerrorbells
+let mapleader = " "
+
+nnoremap <S-L> :action NextTab<CR>
+nnoremap <S-H> :action PreviousTab<CR>
+nnoremap <leader>f :action ReformatWithPrettierAction<CR>
+nnoremap <leader>cr :action CloseAllToTheRight<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader><leader> :action GotoFile<CR>
+nnoremap <leader>fs :action FindInPath<CR>
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
