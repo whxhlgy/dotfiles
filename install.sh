@@ -56,6 +56,6 @@ sudo apt install tmux -y
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # neovim
 cargo install bob-nvim
-bob install nightly
+bob install stable
 ln -s ~/.local/share/bob/nightly/bin/nvim ~/.local/bin/nvim
 sudo apt install luarocks # for neorg
