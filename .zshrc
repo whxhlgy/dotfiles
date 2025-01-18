@@ -71,9 +71,11 @@ plugins=(git docker docker-compose)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+if [[ ! -e ~/.zshrc.user ]] then
+  mkdir ~/.zshrc.user
+fi
 
-export http_proxy="http://127.0.0.1:7890"
-export https_proxy="http://127.0.0.1:7890"
+source ~/.zshrc.user
 
 ################
 ##### VIM ######
@@ -91,7 +93,6 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/junjiezh/bin:$PATH"
 export PATH="$HOME/opt/lua@5.1/bin/lua:$PATH"
-export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -115,4 +116,3 @@ bindkey '^[[B' history-search-forward
 autoload -U compinit; compinit
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls='ls --color=auto'
-export "JAVA_HOME=/Users/zhongjunjie/Library/Java/JavaVirtualMachines/corretto-17.0.13/Contents/Home"

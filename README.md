@@ -1,18 +1,19 @@
-* External dependencies:
+# Usage
 
-**TPM**
-`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+this is a bare git repo for my personal config files
 
-**Nerd Font**
-Install a nerd font, I prefer: [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip)
-And set that font in your terminal
+## steps
 
-**P10K**
-`git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-
-** Install
+first copy the actual content of repo to your HOME dir
 
 ```
-chmod +x ./install.sh
-./install.sh
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+git clone --bare https://github.com/whxhlgy/dotfiles.git $HOME/.cfg
+cfg checkout
 ```
+
+do some config:
+`cfg config --local status.showUntrackedFiles no`
+
+install some cli tools:
+`bash setuplet.sh`
