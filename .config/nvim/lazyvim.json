@@ -1,8 +1,8 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.copilot-chat",
-    "lazyvim.plugins.extras.coding.luasnip",
+    "lazyvim.plugins.extras.ai.copilot-chat",
     "lazyvim.plugins.extras.coding.mini-surround",
+    "lazyvim.plugins.extras.editor.mini-files",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.java",
     "lazyvim.plugins.extras.lang.json",
@@ -11,7 +11,7 @@
     "lazyvim.plugins.extras.lang.typescript"
   ],
   "news": {
-    "NEWS.md": "6520"
+    "NEWS.md": "10960"
   },
-  "version": 6
+  "version": 7
 }
