@@ -1,3 +1,7 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -66,33 +70,39 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-if [[ ! -e ~/.zshrc.user ]] then
-  mkdir ~/.zshrc.user
-fi
 
-source ~/.zshrc.user
+# export MANPATH="/usr/local/man:$MANPATH"
 
-################
-##### VIM ######
-################
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-alias vim="nvim"
-export VIM_HOME=$(which vim)
-export CC=/usr/bin/clang
-export EDITOR=nvim
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
 
-################
-##### PATH #####
-################
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="/home/junjiezh/bin:$PATH"
-export PATH="$HOME/opt/lua@5.1/bin/lua:$PATH"
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -100,19 +110,11 @@ source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# zsh
-bindkey -e
-# history setup
-HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
-# completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-autoload -U compinit; compinit
+# export HTTP_PROXY=127.0.0.1:7890
+# export HTTPS_PROXY=127.0.0.1:7890
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+alias vim="nvim"
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls='ls --color=auto'
